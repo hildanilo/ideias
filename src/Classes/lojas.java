@@ -16,5 +16,5 @@ public class lojas implements Serializable {
     private int codigo_loja;
     private String descricao;
     private String rasao_social;
-    
+    private int cnpj;
 }
