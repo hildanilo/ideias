@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  *
  * @author DANILO
  */
-public class Ideias extends Application {
+public class Login extends Application {
     
     @Override
     public void start(Stage primaryStage) {
