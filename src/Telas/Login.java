@@ -10,6 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -21,9 +23,12 @@ public class Login extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+        Label LblLogin = new Label("Login");
+        TextField TxtLogin = new TextField();
+        
+       
+        
+        TxtLogin.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
@@ -32,7 +37,7 @@ public class Login extends Application {
         });
         
         StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        root.getChildren().addAll(LblLogin,TxtLogin);
         
         Scene scene = new Scene(root, 300, 250);
         
