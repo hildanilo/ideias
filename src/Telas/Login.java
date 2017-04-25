@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -33,10 +32,16 @@ public class Login extends Application {
         
         //Configuração do Form TxtLogin
         TextField txtLogin = new TextField();
+        // Define o tamanho do Form
+        txtLogin.setMaxSize(100, 0);
+         //Posição
         txtLogin.setTranslateX(0);
         txtLogin.setTranslateY(-10);
         
         PasswordField txtSenha = new PasswordField();
+         // Define o tamanho do Form
+        txtSenha.setMaxSize(100, 0);
+        //Posição
         txtSenha.setTranslateX(0);
         txtSenha.setTranslateY(40);
         
@@ -47,9 +52,7 @@ public class Login extends Application {
         Button btnCancelar = new Button("Cancelar");
         btnCancelar.setTranslateX(70);
         btnCancelar.setTranslateY(90);
-        
-        VBox vbox = new VBox(lblLogin,lblSenha,txtLogin,btnAcessar,btnCancelar);
-        
+       
         btnAcessar.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
@@ -67,11 +70,11 @@ public class Login extends Application {
         });
         
         StackPane root = new StackPane();
-        root.getChildren().addAll(lblLogin,lblSenha,txtLogin,txtSenha,vbox,btnAcessar,btnCancelar);
+        root.getChildren().addAll(lblLogin,lblSenha,txtLogin,txtSenha,btnAcessar,btnCancelar);
         
         Scene scene = new Scene(root, 300, 250);
         //Some com a estrutura da janela
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
         
         // Some com maximizar e minimizar
         primaryStage.initStyle(StageStyle.UTILITY);
