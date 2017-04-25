@@ -56,7 +56,15 @@ public class Login extends Application {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                
+            }
+        });
+        
+        btnCancelar.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+               
             }
         });
         
@@ -64,8 +72,10 @@ public class Login extends Application {
         root.getChildren().addAll(lblLogin,lblSenha,txtLogin,txtSenha,vbox,btnAcessar,btnCancelar);
         
         Scene scene = new Scene(root, 300, 250);
+        //Some com a estrutura da janela
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         
-        //primaryStage.initStyle(StageStyle.UNDECORATED);
+        // Some com maximizar e minimizar
         primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
