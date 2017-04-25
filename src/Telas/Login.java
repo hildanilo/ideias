@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Telas;
 
 import javafx.application.Application;
@@ -11,9 +6,12 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -23,12 +21,38 @@ public class Login extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Label LblLogin = new Label("Login");
-        TextField TxtLogin = new TextField();
         
-       
+        //Configuração do Label Login
+        Label lblLogin = new Label("Login");
+        lblLogin.setTranslateX(0);
+        lblLogin.setTranslateY(-40);
         
-        TxtLogin.setOnAction(new EventHandler<ActionEvent>() {
+        Label lblSenha = new Label("Senha");
+        lblSenha.setTranslateX(0);
+        lblSenha.setTranslateY(-40);
+        
+        //Configuração do Form TxtLogin
+        TextField txtLogin = new TextField();
+        txtLogin.setTranslateX(0);
+        txtLogin.setTranslateY(-10);
+        
+        PasswordField txtSenha = new PasswordField();
+        txtSenha.setTranslateX(0);
+        txtSenha.setTranslateY(40);
+        
+        Button btnAcessar = new Button("Acessar");
+        btnAcessar.setTranslateX(-60);
+        btnAcessar.setTranslateY(90);
+        
+        Button btnCancelar = new Button("Cancelar");
+        btnCancelar.setTranslateX(70);
+        btnCancelar.setTranslateY(90);
+        
+        VBox vbox = new VBox(lblLogin,lblSenha,txtLogin,btnAcessar,btnCancelar);
+        
+        
+        
+        btnAcessar.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
@@ -37,11 +61,13 @@ public class Login extends Application {
         });
         
         StackPane root = new StackPane();
-        root.getChildren().addAll(LblLogin,TxtLogin);
+        root.getChildren().addAll(lblLogin,lblSenha,txtLogin,txtSenha,vbox,btnAcessar,btnCancelar);
         
         Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Hello World!");
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.UTILITY);
+        primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
