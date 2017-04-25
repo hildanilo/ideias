@@ -50,8 +50,6 @@ public class Login extends Application {
         
         VBox vbox = new VBox(lblLogin,lblSenha,txtLogin,btnAcessar,btnCancelar);
         
-        
-        
         btnAcessar.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
