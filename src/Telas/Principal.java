@@ -18,10 +18,9 @@ public class Principal extends Application  {
         StackPane root = new StackPane();
         root.getChildren().addAll();
         
-        Scene scene = new Scene(root, 1800, 800);
+        Scene scene = new Scene(root, 1200, 600);
         
-        primaryStage.getMinHeight();
-        primaryStage.setMinHeight(10);
+        primaryStage.setMaximized(true);
         primaryStage.setTitle("Principal");
         primaryStage.setScene(scene);
         primaryStage.show();
