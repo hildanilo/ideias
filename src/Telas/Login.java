@@ -33,10 +33,12 @@ public class Login extends Application {
         
         //Configuração do Form TxtLogin
         TextField txtLogin = new TextField();
+        txtLogin.setMaxSize(90, 0);
         txtLogin.setTranslateX(0);
         txtLogin.setTranslateY(-10);
         
         PasswordField txtSenha = new PasswordField();
+        txtSenha.setMaxSize(90, 0);
         txtSenha.setTranslateX(0);
         txtSenha.setTranslateY(40);
         
