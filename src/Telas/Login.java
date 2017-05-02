@@ -24,11 +24,11 @@ public class Login extends Application {
         //Configuração do Label Login
         Label lblLogin = new Label("Login");
         lblLogin.setTranslateX(-70);
-        lblLogin.setTranslateY(-10);
+        lblLogin.setTranslateY(-40);
         
         Label lblSenha = new Label("Senha");
         lblSenha.setTranslateX(-70);
-        lblSenha.setTranslateY(40);
+        lblSenha.setTranslateY(20);
         
         //Configuração do Form TxtLogin
         TextField txtLogin = new TextField();
@@ -36,28 +36,29 @@ public class Login extends Application {
         txtLogin.setMaxSize(100, 0);
          //Posição
         txtLogin.setTranslateX(0);
-        txtLogin.setTranslateY(-10);
+        txtLogin.setTranslateY(-40);
         
         PasswordField txtSenha = new PasswordField();
          // Define o tamanho do Form
         txtSenha.setMaxSize(100, 0);
         //Posição
         txtSenha.setTranslateX(0);
-        txtSenha.setTranslateY(40);
+        txtSenha.setTranslateY(20);
         
         Button btnAcessar = new Button("Acessar");
         btnAcessar.setTranslateX(-60);
-        btnAcessar.setTranslateY(90);
+        btnAcessar.setTranslateY(60);
         
         Button btnCancelar = new Button("Cancelar");
         btnCancelar.setTranslateX(70);
-        btnCancelar.setTranslateY(90);
+        btnCancelar.setTranslateY(60);
        
         btnAcessar.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
-                
+                Principal Prin = new Principal();
+                Prin.start(primaryStage);
             }
         });
         
@@ -72,12 +73,12 @@ public class Login extends Application {
         StackPane root = new StackPane();
         root.getChildren().addAll(lblLogin,lblSenha,txtLogin,txtSenha,btnAcessar,btnCancelar);
         
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root, 300, 200);
         //Some com a estrutura da janela
-        //primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         
         // Some com maximizar e minimizar
-        primaryStage.initStyle(StageStyle.UTILITY);
+       // primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
         primaryStage.show();
