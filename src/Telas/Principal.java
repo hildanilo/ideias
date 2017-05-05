@@ -9,6 +9,8 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TitledPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
@@ -66,9 +68,27 @@ public class Principal extends Application  {
         //--- Inserindo o Acordion dentro do Vbox
         VbPanel.getChildren().addAll(accordion);
         
+        Image imgFechar = new Image(getClass().getResourceAsStream("/IMG/Fechar.png"));
+        Image imgMaximizar = new Image(getClass().getResourceAsStream("/IMG/Maximizar.png"));
+        Image imgMinimizar = new Image(getClass().getResourceAsStream("/IMG/minimizar.png"));
+         
+        Button fechar = new Button("",new ImageView(imgFechar));
+        fechar.setTranslateX(940);
+        fechar.setTranslateY(-510);
+        fechar.setStyle("-fx-focus-color: transparent;\n" + "-fx-faint-focus-color: transparent;");
         
+        Button maximizar = new Button("",new ImageView(imgMaximizar));
+        maximizar.setTranslateX(910);
+        maximizar.setTranslateY(-510);
+        maximizar.setStyle("-fx-focus-color: transparent;\n" + "-fx-faint-focus-color: transparent;");
+        
+        Button minimizar = new Button("",new ImageView(imgMinimizar));
+        minimizar.setTranslateX(880);
+        minimizar.setTranslateY(-510);
+        minimizar.setStyle("-fx-focus-color: transparent;\n" + "-fx-faint-focus-color: transparent;");
+                
         StackPane root = new StackPane();
-        root.getChildren().addAll(menuBar, VbPanel);
+        root.getChildren().addAll(menuBar, VbPanel,fechar,maximizar,minimizar);
         
         Scene scene = new Scene(root, 1200, 600);
         
