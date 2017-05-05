@@ -1,6 +1,8 @@
 package Telas;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
@@ -76,6 +78,15 @@ public class Principal extends Application  {
         fechar.setTranslateX(940);
         fechar.setTranslateY(-510);
         fechar.setStyle("-fx-focus-color: transparent;\n" + "-fx-faint-focus-color: transparent;");
+        
+        fechar.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage = (Stage) fechar.getScene().getWindow();
+                stage.close();
+            }
+        });
         
         Button maximizar = new Button("",new ImageView(imgMaximizar));
         maximizar.setTranslateX(910);
